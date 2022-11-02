@@ -1,0 +1,12 @@
+{
+    "name": "ofp/blurfix",
+    "require": {
+        "twig/twig": "^3.4"
+    },
+    "authors": [
+        {
+            "name": "VU Trong Hung",
+            "email": "t.vu@codeur.online"
+        }
+    ]
+}

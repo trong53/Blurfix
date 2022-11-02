@@ -1,0 +1,45 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}{{ movie.title }}{% endblock %}
+
+{% block content %}
+    <div class="mt-8">
+        <h2 class="text-white text-4xl">{{ movie.title }}</h2>
+        <div class="mt-8 flex justify-around items-center">
+            {% if movie.favorite == 'true' %}
+                <a href="/pages/movie.php?favori={{movie.id}}"
+                   class="text-lg bg-none rounded px-4 py-2 shadow-lg border-[#1190ea] border text-[#1190ea] hover:bg-[#1190ea] hover:text-white group">
+                    <i class="fi fi-star text-[#1190ea] pr-2 group-hover:text-white" title="Enlever des favoris"></i>
+                    Favori
+                </a>
+            {% else %}
+                <a href="/pages/movie.php?favori={{movie.id}}"
+                   class="text-lg bg-none rounded px-4 py-2 shadow-lg border-[#1190ea] border text-[#1190ea] hover:bg-[#1190ea] hover:text-white">
+                    <i class="fi fi-star text-white pr-2" title="Mettre en favori"></i>
+                    Favori
+                </a>
+            {% endif %}
+
+            <span class="block border border-[#1190ea] rounded-full px-4 py-2 text-white">
+                <span class="fi fi-eye text-[#1190ea] pr-2"></span>
+                {{ movie.views_number }} vu
+            </span>
+
+            <span class="block border border-[#1190ea] rounded-full px-4 py-2 text-white">
+                <span class="fi fi-radio-btn-passive text-[#1190ea] pr-2"></span>
+                {{ movie.category }}
+            </span>
+        </div>
+        <div class="mt-8 border-t border-slate-800 pt-12">
+            <p class="text-[#999] text-xl">
+                {{ movie.description }}
+            </p>
+        </div>
+        <div>
+            <video class="w-full mt-12" controls>
+                <source src="../assets/mov/minion.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+{% endblock %}

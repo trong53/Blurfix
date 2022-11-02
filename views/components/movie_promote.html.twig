@@ -1,0 +1,15 @@
+<a href="/pages/movie.php?id={{promote_movie[0].id }}"
+   class="block group mt-10 w-full h-56 bg-white rounded-lg bg-[url('{{ promote_movie[0].picture }}')] bg-cover bg-center bg-fixed transition-all relative">
+    <span class="block h-14 w-full absolute bottom-0 bg-[#252848] rounded-b px-4">
+        <span class="block w-full h-full flex items-center justify-between text-white text-xl truncate">
+            <span class="max-w-xl truncate">
+                {{ promote_movie[0].title }}
+                <br/>
+                {{ promote_movie[0].description }}
+            </span>
+            <span class="text-[#1190ea] border-[#1190ea] border px-4 py-2 rounded group-hover:bg-[#1190ea] group-hover:text-white transition hidden xl:block">
+                Voir la bande-annonce
+            </span>
+        </span>
+    </span>
+</a>

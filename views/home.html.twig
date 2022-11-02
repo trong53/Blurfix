@@ -1,0 +1,50 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+    <div class="my-2 relative">
+        <form action='' method='get'>
+        <label for="search" class="sr-only">Recherche</label>
+        <input type="text" name="search"
+               class="text-white w-full h-12 rounded-3xl pl-8 text-xl bg-[#262837]"
+               id="search"
+               placeholder="Recherche...">
+        <button type="submit" class="absolute text-[#999] right-6 top-4" title="Rechercher"><span class="sr-only">Rechercher</span><i class="fi fi-search"></i></button>
+        </form>
+    </div>
+    {% include 'components/movie_promote.html.twig' %}
+    <div class="mt-8">
+        <div class="flex justify-between">
+            <h2 class="text-white text-4xl">Streaming</h2>
+            <div class="flex justify-center items-center">
+                
+                    <label for="filter" class="mr-4"> <i class="fi fi-filter text-[#1190ea]"></i> </label>
+                    <select name="filter" id="filter"
+                            class="text-lg text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200"
+                            onchange="window.location = '/?filter='+this.value">
+                        {% for category in categories %}
+                            <option value="{{ category }}">{{ category }}</option>
+                        {% endfor %}
+                    </select>
+                
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row flex-wrap justify-around mt-8">
+            {% for movie in movies %}
+                {% include 'components/movie_card.html.twig' %}
+            {% endfor %}
+        </div>
+        <div class="text-[#999] flex justify-between text-sm pt-4 border-t border-slate-700 mt-4 pt-4">
+            <div>
+                Vidéos de {{ pagination.from}} à {{ pagination.to }} sur {{ pagination.total }}
+            </div>
+            <div class="text-white">
+                <a href="{{ pagination.previous }}"
+                   class="border py-2 px-4 rounded text-[#1190ea] border-[#1190ea] hover:bg-[#1190ea] hover:text-white transition">Précédent</a>
+                <a href="{{ pagination.next }}"
+                   class="border py-2 px-4 rounded text-[#1190ea] border-[#1190ea] hover:bg-[#1190ea] hover:text-white transition">Suivant</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

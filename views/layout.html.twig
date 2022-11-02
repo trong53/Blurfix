@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Blurfix : Show your movie anywhere">
+
+    <title>{% block title %}{% endblock %} - Blurfix</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" media="all">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin media="all">
+    <link href="https://fonts.googleapis.com/css2?family=Exo&family=Nunito:wght@300;400&family=Quicksand&display=swap"
+          rel="stylesheet"
+          media="all">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fontisto@v3.0.4/css/fontisto/fontisto.min.css" media="all">
+</head>
+<body class="min-h-screen font-['Nunito']">
+<div class="flex flex-col md:flex-row min-h-screen">
+    <header class="md:min-w-[15rem] md:w-56 lg:w-72 bg-gradient-to-r from-[#22242f] to-[#242534]">
+        <div class="relative my-4 mb-8">
+            <div class="font-['Quicksand'] text-center text-4xl text-white blur-sm hover:blur-md transition absolute top-0 w-full">Blurfix</div>
+            <h1 class="font-['Quicksand'] text-center text-4xl text-white top-0">Blurfix</h1>
+        </div>
+        {% include '_menu.html.twig' %}
+    </header>
+    <div class="grow bg-gradient-to-r from-[#1b1b21] to-[#252848] p-4 lg:px-16 lg:py-4">
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+</body>
+</html>
