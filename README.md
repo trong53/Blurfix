@@ -30,4 +30,6 @@ Le premier projet pour maîtriser le PHP + le serveur SQL et le Twig. J'ai réal
 * La catégorie est affichée
 * Le film peut être mis en favori
 * 
-![Homepage_presentation](https://user-images.githubusercontent.com/107623849/199440119-a2729243-e0a1-4a48-b79c-da6e0828ebc6.jpg)
+![Image1](https://user-images.githubusercontent.com/107623849/221434745-348e19ed-ea37-417c-bf5e-eebff90d143b.jpg)
+![Image2](https://user-images.githubusercontent.com/107623849/221434749-8c6729a1-95d4-4433-a28c-59a34aaa8377.jpg)
+![Image3](https://user-images.githubusercontent.com/107623849/221434755-84bb1209-c26b-449a-83a7-39b7b1dc54f3.jpg)
